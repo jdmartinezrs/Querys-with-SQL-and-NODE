@@ -8,4 +8,16 @@ import{getAllNamesAddresEmailsEmployees}from"./module/nameaddresemail.js";
 import{getAllOrdersMadeFromFrance}from"./module/orderfromfrance.js";
 import{getAllPaymentsReceivedOfEachClient}from"./module/paymentsreceived.js";
 import{getAllOrderDetailsProductNamesyClient101}from"./module/ordersproductnameclient.js";
-console.log(await getAllOrderDetailsProductNamesyClient101());
+import{getAllAveragesCreditLimitOfClients}from"./module/averagecreditlimit.js";
+import{getAllQuantityInStock}from"./module/totalstock.js";
+import{getAllProductsAverage}from"./module/averagebuypriece.js";
+import{getAllOfficesQuantityByCountry}from"./module/officesquantitybycountry.js";
+import{getAllPaymentsRecieved}from"./module/paymentstotal.js";
+import{getAllEmployeeQuantity}from"./module/quantityofemployees.js";
+import{getAllOrdersAverage}from"./module/avgorderednumber.js";
+import{getAllProductsPriece}from"./module/totalprieceproducts.js";
+import{getAllMSRPAverage}from"./module/msrpaverage.js";
+import{getAllEmployeesTitleJob}from"./module/quantityemployeestitle.js";
+
+
+console.log(await getAllEmployeesTitleJob());
