@@ -203,7 +203,7 @@ SELECT jobTitle, COUNT(employeeNumber) AS cantidadDeEmpleados FROM employees GRO
 12. **Calcular el total de ventas realizadas en cada país:**
 
     ```
-    SELECT cs.country, SUM(ls.quantityOrdered*ls.priceEach)AS cantidadVentas FROM customers cs INNER JOIN orders od ON cs.customerNumber=od.customerNumber INNER JOIN orderdetails ls ON od.orderNumber=ls.orderNumber GROUP BY cs.country;
+    SELECT cs.country, SUM(ls.quantityOrdered*ls.priceEach)AS cantidadVentas FROM customers cs INNER JOIN orders od ON cs.customerNumber=od.customerNumber INNER JOIN orderdetails ls ON od.orderNumber=ls.orderNumber WHERE od.status ='shipped' GROUP BY cs.country;
     ```
 
 13. **Obtener el promedio del precio de compra de los productos por línea de productos:**
