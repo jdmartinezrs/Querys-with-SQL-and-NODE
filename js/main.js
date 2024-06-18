@@ -1,6 +1,17 @@
-import {getAllProductsDescriptions}from"./module/productDescription.js";
-import {getAllSanFranciscoEmployees}from"./module/employeesSanFrancisco.js";
-import {getAllOrdersShipped}from"./module/shippedOrders.js";
+//Products
+import{getAllProductsDescriptions}from"./module/productos.js";
+
+
+//Employees
+import {getAllSanFranciscoEmployees}from"./module/employees.js";
+
+
+//Orders
+import {getAllOrdersShipped}from"./module/orders.js";
+console.log(await getAllOrdersShipped());
+
+
+
 import {getAllPaymentDetailsClient103}from"./module/paymentDetails.js";
 import {getAllUsaClientsCreditLimitGreaterThan500}from"./module/clientsFromUsa.js";
 import{getAllProductsNextToDescriptions}from"./module/productsLineDescription.js";
@@ -34,4 +45,3 @@ import{getAllLineProductsAverageByBuyPrice}from"./module/averageOfPriceBuyByLine
 import{getAllTotalProductsSoldByEachSeller}from"./module/quantityOfProductsSoldBySellers.js";
 import{getAllPaymentsRecievedByEachSeller}from"./module/totalPaysRecievedBySeller.js";
 import{getAllAverageCreditLimit}from"./module/averageOfCredidtLimit.js";
-console.log(await getAllAverageCreditLimit());
