@@ -49,3 +49,4 @@ export const getAllAverageCreditLimit = async()=>{
     let [result] = await connection.query(`SELECT e.employeeNumber,  e.firstName,  e.lastName,  AVG(c.creditLimit) AS promedioLimiteCredito FROM  customers c INNER JOIN  employees e ON c.salesRepEmployeeNumber = e.employeeNumber GROUP BY  e.employeeNumber, e.firstName, e.lastName`);
     return result;
 }
+
