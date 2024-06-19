@@ -50,3 +50,13 @@ export const getAllAverageCreditLimit = async()=>{
     return result;
 }
 
+
+//38.Calcular la cantidad media de productos pedidos por cada cliente:
+
+export const getAllAverageProductsOrderedByclient = async()=>{
+    let [result] = await connection.query(`SELECT  c.customerNumber,  AVG(od.quantityOrdered) AS promedioCantidadProductos  FROM  customers c  INNER JOIN orders o ON c.customerNumber = o.customerNumber  INNER JOIN  orderdetails od ON o.orderNumber = od.orderNumber  WHERE  o.status = 'Shipped'  GROUP BY c.customerNumber`);
+    return result;
+}
+
+
+

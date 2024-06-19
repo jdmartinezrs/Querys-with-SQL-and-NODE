@@ -70,3 +70,9 @@ export const getAllLineProductsAverageByBuyPrice = async()=>{
     porcentaPrecioProducto FROM productlines pl INNER JOIN products pr ON pl.productLine=pr.productLine GROUP BY pl.productLine`);
     return result;
 }
+
+export const getAllAverageProductLine = async()=>{
+    let [result] = await connection.query(`SELECT  p.productLine,AVG(od.priceEach) AS promedioPrecioVenta FROM products p INNER JOIN orderdetails od ON p.productCode = od.productCode GROUP BY p.productLine
+ORDER BY p.productLine`);
+    return result;
+}

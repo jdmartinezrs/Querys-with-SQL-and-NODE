@@ -236,19 +236,21 @@ SELECT jobTitle, COUNT(employeeNumber) AS cantidadDeEmpleados FROM employees GRO
 17. **Encontrar el total de ventas realizadas por cada oficina:**
 
     ```
-    
+    SELECT o.officeCode, SUM(od.quantityOrdered * od.priceEach) AS totalVentas FROM  offices o INNER JOIN  employees e ON o.officeCode = e.officeCode INNER JOIN  customers c ON e.employeeNumber = c.salesRepEmployeeNumber INNER JOIN  orders ord ON c.customerNumber = ord.customerNumber INNER JOIN orderdetails od ON ord.orderNumber = od.orderNumber GROUP BY o.officeCode;
     ```
 
 18. **Calcular la cantidad media de productos pedidos por cada cliente:**
 
     ```
-    
+SELECT  c.customerNumber,  AVG(od.quantityOrdered) AS promedioCantidadProductos  FROM  customers c  INNER JOIN orders o ON c.customerNumber = o.customerNumber  INNER JOIN  orderdetails od ON o.orderNumber = od.orderNumber  WHERE  o.status = 'Shipped'  GROUP BY c.customerNumber    
     ```
 
 19. **Obtener el total de pagos realizados en cada año:**
 
     ```
-    
+    SELECT YEAR(paymentDate) AS year, SUM(amount) AS totalPagos FROM payments GROUP BY  YEAR(paymentDate);
     ```
 
-20. 
+20. **Encontrar el promedio del precio de venta (priceEach) de los productos por línea de productos:**
+SELECT  p.productLine,AVG(od.priceEach) AS promedioPrecioVenta FROM products p INNER JOIN orderdetails od ON p.productCode = od.productCode GROUP BY p.productLine
+ORDER BY p.productLine;

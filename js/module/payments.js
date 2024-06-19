@@ -29,3 +29,8 @@ export const getAllPaymentsMadeByCountry = async()=>{
     return result;
 }
 
+export const getAllpaymentsForYears = async()=>{
+    let [result] = await connection.query(`SELECT YEAR(paymentDate) AS year, SUM(amount) AS totalPagos FROM payments GROUP BY  YEAR(paymentDate)`);
+    return result;
+}
+

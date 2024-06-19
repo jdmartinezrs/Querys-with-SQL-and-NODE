@@ -9,6 +9,7 @@ import{getAllProductsOrderedByEachClient}from"./module/products.js";
 import{getAllProductInStockAverage}from"./module/products.js";
 import{getAllProductsSoldAndProductLine}from"./module/products.js";
 import{getAllLineProductsAverageByBuyPrice}from"./module/products.js";
+import{getAllAverageProductLine}from"./module/products.js";
 
 
 //Employees
@@ -37,6 +38,8 @@ import{getAllAverageCreditByCountry}from"./module/customers.js";
 import{getAllSalesSortedByPrice}from"./module/customers.js";
 import{getAllProductsAverageOrderedByClients}from"./module/customers.js";
 import{getAllAverageCreditLimit}from"./module/customers.js";
+import{getAllAverageProductsOrderedByclient}from"./module/customers.js";
+
 
 
 //payments
@@ -44,6 +47,7 @@ import{getAllPaymentsReceivedOfEachClient}from"./module/payments.js";
 import{getAllPaymentsRecieved}from"./module/payments.js";
 import{getAllPaymentsRecievedByEachClient}from"./module/payments.js";
 import{getAllPaymentsMadeByCountry}from"./module/payments.js";
+import{getAllpaymentsForYears}from"./module/payments.js";
 
 
 //orderDetails
@@ -53,6 +57,9 @@ import{getAllOrdersAverage}from"./module/orderDetails.js";
 
 //offices 
 import{getAllOfficesQuantityByCountry}from"./module/offices.js";
+import{getAllSoldsByOfficine }from"./module/offices.js";
+
+console.log(await getAllAverageProductLine());
 
 
 
