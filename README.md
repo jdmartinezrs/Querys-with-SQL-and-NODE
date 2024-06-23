@@ -241,7 +241,8 @@ SELECT jobTitle, COUNT(employeeNumber) AS cantidadDeEmpleados FROM employees GRO
 
 18. **Calcular la cantidad media de productos pedidos por cada cliente:**
 
-    ```SELECT  c.customerNumber,  AVG(od.quantityOrdered) AS promedioCantidadProductos  FROM  customers c  INNER JOIN orders o ON c.customerNumber = o.customerNumber  INNER JOIN  orderdetails od ON o.orderNumber = od.orderNumber  WHERE  o.status = 'Shipped'  GROUP BY c.customerNumber  
+    ```
+    SELECT  c.customerNumber,  AVG(od.quantityOrdered) AS promedioCantidadProductos  FROM  customers c  INNER JOIN orders o ON c.customerNumber = o.customerNumber  INNER JOIN  orderdetails od ON o.orderNumber = od.orderNumber  WHERE  o.status = 'Shipped'  GROUP BY c.customerNumber  
     ```
 
 19. **Obtener el total de pagos realizados en cada año:**
